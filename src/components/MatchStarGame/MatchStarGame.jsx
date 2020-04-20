@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./MatchStarGame.module.css";
 import utils from "../../math/";
+import PlayNumber from "../PlayNumber/PlayNumber";
+import StarDisplay from "../StarDisplay/StarDisplay";
 const colors = {
   available: "lightgray",
   used: "lightgreen",
@@ -9,7 +11,24 @@ const colors = {
 };
 
 const MatchStarGame = () => {
-  const stars = 5;
+  const [stars, setStars] = useState(utils.random(1, 9));
+  const [availableNums, setAvaialbleNums] = useState([1, 2, 3, 4, 5]);
+  const [candidateNums, setCandidateNums] = useState([2, 3]);
+
+  const numberStatus = (num) => {
+      if(!availableNums.includes(num)) {
+          return "used"
+      }
+      if(candidateNums.includes(num)) {
+          return candidatesAreWrong ? "wrong" : "candidate"
+      }
+      return "available"
+  };
+
+  const candidatesAreWrong = utils.sum(candidateNums) > stars;
+
+ 
+
   return (
     <div className={styles.game}>
       <div className={styles.help}>
@@ -17,15 +36,11 @@ const MatchStarGame = () => {
       </div>
       <div className={styles.body}>
         <div className={styles.left}>
-          {utils.range(1, stars).map((star, i) => (
-            <div className={styles.star} key={i} />
-          ))}
+          <StarDisplay count={stars} />
         </div>
         <div className={styles.right}>
           {utils.range(1, 9).map((num, i) => (
-            <button className={styles.number} key={i}>
-              {num}
-            </button>
+            <PlayNumber num={num} key={i} status={numberStatus(num)} colors={colors}/>
           ))}
         </div>
       </div>

@@ -1,3 +1,8 @@
+:root {
+    --border-box-color:  rgb(182, 0, 0);
+    
+}
+
 .game {
   max-width: 500px;
   margin: 0 auto;
@@ -8,47 +13,26 @@
 }
 
 .help {
-  color: #666;
+  color: rgb(0, 0, 0);
+  padding: 15px;
   margin: 10px;
   text-align: center;
+  font-size: large;
 }
 
 .left {
   text-align: center;
   width: 50%;
-  border: thin solid #ddd;
+  border: thin solid var(--border-box-color);
+  background-color: rgb(4, 131, 0);
+  color: white;
 }
 
 .right {
   text-align: center;
   padding: 10px;
   width: 50%;
-  border: thin solid #ddd;
-}
-
-.star {
-  display: inline-block;
-  margin: 0 15px;
-}
-
-.star:after {
-  content: "\2605";
-  font-size: 45px;
-}
-
-.number {
-  background-color: #eee;
-  border: thin solid #ddd;
-  width: 45px;
-  height: 45px;
-  margin: 10px;
-  font-size: 25px;
-}
-
-.number:focus,
-.number:active {
-  outline: none;
-  border: thin solid #ddd;
+  border: thin solid  var(--border-box-color);
 }
 
 .timer {

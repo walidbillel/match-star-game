@@ -1,5 +1,5 @@
 import React from 'react';
-import MatchStarGame from './components/MatchStarGame/MatchStarGame.jsx'
+import MatchStarGame from './components/MatchStarGame/MatchStarGame'
 
 
 function App() {
