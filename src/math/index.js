@@ -1,4 +1,4 @@
-export const utils = {
+const utils = {
   // Sum an array
   sum: (arr) => arr.reduce((acc, curr) => acc + curr, 0),
 
@@ -26,3 +26,5 @@ export const utils = {
     return sums[utils.random(0, sums.length - 1)];
   },
 };
+
+export default utils;

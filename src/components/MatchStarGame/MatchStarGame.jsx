@@ -1,13 +1,15 @@
 import React from "react";
-import styles from './MatchStarGame.module.css'
+import styles from "./MatchStarGame.module.css";
+import utils from "../../math/";
 const colors = {
-    available: 'lightgray',
-    used: 'lightgreen',
-    wrong: 'lightcoral',
-    candidate: 'deepskyblue',
-  };
+  available: "lightgray",
+  used: "lightgreen",
+  wrong: "lightcoral",
+  candidate: "deepskyblue",
+};
 
 const MatchStarGame = () => {
+  const stars = 5;
   return (
     <div className={styles.game}>
       <div className={styles.help}>
@@ -15,26 +17,16 @@ const MatchStarGame = () => {
       </div>
       <div className={styles.body}>
         <div className={styles.left}>
-          <div className={styles.star} />
-          <div className={styles.star} />
-          <div className={styles.star} />
-          <div className={styles.star} />
-          <div className={styles.star} />
-          <div className={styles.star} />
-          <div className={styles.star} />
-          <div className={styles.star} />
-          <div className={styles.star} />
+          {utils.range(1, stars).map((star, i) => (
+            <div className={styles.star} key={i} />
+          ))}
         </div>
         <div className={styles.right}>
-          <button className={styles.number}>1</button>
-          <button className={styles.number}>2</button>
-          <button className={styles.number}>3</button>
-          <button className={styles.number}>4</button>
-          <button className={styles.number}>5</button>
-          <button className={styles.number}>6</button>
-          <button className={styles.number}>7</button>
-          <button className={styles.number}>8</button>
-          <button className={styles.number}>9</button>
+          {utils.range(1, 9).map((num, i) => (
+            <button className={styles.number} key={i}>
+              {num}
+            </button>
+          ))}
         </div>
       </div>
       <div className={styles.timer}>Time Remaining: 10</div>
