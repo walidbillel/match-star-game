@@ -1,33 +1,34 @@
-:root {
-    --border-box-color:  rgb(182, 0, 0);
-    
-}
+
 
 .game {
-  max-width: 500px;
-  margin: 0 auto;
+  max-width: 530px;
+  margin: 180px auto;
 }
 
 .body {
   display: flex;
+  
 }
 
 .help {
-  color: rgb(0, 0, 0);
-  padding: 15px;
-  margin: 10px;
+  color: rgb(255, 255, 255);
+  font-family: cursive;
+  padding: 20px;
   text-align: center;
   font-size: large;
+  background-color:darkblue;
+  
 }
 
 .againBtn {
   text-align: center;
   padding: 15px ;
-  background-color: rgb(2, 58, 131);
-  color: white;
+  background-color:darkblue;
+  color: rgb(255, 255, 255);
   font-size: 15px;
   margin-top: 15px;
   cursor: pointer;
+  font-weight: bold;
 }
 
 .againBtn:hover {
@@ -38,22 +39,26 @@
 .left {
   text-align: center;
   width: 50%;
-  border: thin solid var(--border-box-color);
   background-color: rgb(0, 0, 0);
   color: white;
 }
 
 .right {
   text-align: center;
+  background-color: white;
   padding: 10px;
   width: 50%;
-  border: thin solid  var(--border-box-color);
+  border: thin solid red;
 }
 
 .timer {
-  color: #666;
-  margin-top: 3px;
-  margin-left: 3px;
+  color: rgb(255, 255, 255);
+  padding: 15px;
+  font-size: large;
+  font-family: cursive;
+  font-weight: bold;
+  text-align: center;
+  background-color: darkblue;
 }
 
 .gameOver .message {
