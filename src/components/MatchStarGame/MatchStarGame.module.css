@@ -20,11 +20,26 @@
   font-size: large;
 }
 
+.againBtn {
+  text-align: center;
+  padding: 15px ;
+  background-color: rgb(2, 58, 131);
+  color: white;
+  font-size: 15px;
+  margin-top: 15px;
+  cursor: pointer;
+}
+
+.againBtn:hover {
+  background-color: rgb(0, 175, 23);
+  padding: 16px ;
+}
+
 .left {
   text-align: center;
   width: 50%;
   border: thin solid var(--border-box-color);
-  background-color: rgb(4, 131, 0);
+  background-color: rgb(0, 0, 0);
   color: white;
 }
 
@@ -41,8 +56,33 @@
   margin-left: 3px;
 }
 
-.game-done .message {
+.gameOver .message {
   font-size: 250%;
   font-weight: bold;
   margin: 15px;
 }
+
+.number {
+    background-color: #eee;
+    border: thin solid #ddd;
+    width: 45px;
+    height: 45px;
+    margin: 10px;
+    font-size: 25px;
+  }
+  
+  .number:focus,
+  .number:active {
+    outline: none;
+    border: thin solid #ddd;
+  }
+
+  .star {
+    display: inline-block;
+    margin: 0 15px;
+  }
+  
+  .star:after {
+    content: "\2605";
+    font-size: 45px;
+  }
